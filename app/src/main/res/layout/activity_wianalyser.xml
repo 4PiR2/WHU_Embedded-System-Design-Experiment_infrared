@@ -22,7 +22,7 @@
 	<Button
 		android:id="@+id/button1"
 		android:text="Access Points"
-		android:layout_width="200sp"
+		android:layout_width="150sp"
 		android:layout_height="wrap_content"
 		android:background="@android:color/holo_blue_bright"
 		app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
 	<Button
 		android:id="@+id/button2"
 		android:text="Channel Graph"
-		android:layout_width="200sp"
+		android:layout_width="150sp"
 		android:layout_height="wrap_content"
 		android:background="@android:color/holo_blue_bright"
 		app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
 	<Button
 		android:id="@+id/button3"
 		android:text="Time Graph"
-		android:layout_width="200sp"
+		android:layout_width="150sp"
 		android:layout_height="wrap_content"
 		android:background="@android:color/holo_blue_bright"
 		app:layout_constraintBottom_toBottomOf="parent"

@@ -77,40 +77,41 @@ public class MainActivity extends Activity
 	};
 	void NECtransmit(int freq,int addr,int cmd,int rept)
 	{
-		final int total=110000, span=560, start1=9000, start2=4500, zero=560, one=1680, repeat1=9000, repeat2=2250, repeat3=total-repeat1-repeat2-span;
-		int end=total,pattern[];
+		final int total=2000000,span=110000, interval=560, start1=9000, start2=4500, zero=560, one=1680,
+			repeat1=9000, repeat2=2250, repeat3=span-repeat1-repeat2-interval,
+			end=span-start1-start2-interval*33-zero*16-one*16,max=total/span-1;
+		int[] pattern;
 		List<Integer> p=new LinkedList<>();
+		rept=rept>max?max:rept;
 		p.add(start1);
 		p.add(start2);
 		for(int i=7;i >= 0;i--)
 		{
-			p.add(span);
+			p.add(interval);
 			p.add((addr >> i&1)==1?one:zero);
 		}
 		for(int i=7;i >= 0;i--)
 		{
-			p.add(span);
+			p.add(interval);
 			p.add((addr >> i&1)==0?one:zero);
 		}
 		for(int i=7;i >= 0;i--)
 		{
-			p.add(span);
+			p.add(interval);
 			p.add((cmd >> i&1)==1?one:zero);
 		}
 		for(int i=7;i >= 0;i--)
 		{
-			p.add(span);
+			p.add(interval);
 			p.add((cmd >> i&1)==0?one:zero);
 		}
-		p.add(span);
-		for(int i : p)
-			end-=i;
+		p.add(interval);
 		p.add(end);
 		while(rept-->0)
 		{
 			p.add(repeat1);
 			p.add(repeat2);
-			p.add(span);
+			p.add(interval);
 			p.add(repeat3);
 		}
 		pattern=new int[p.size()];
