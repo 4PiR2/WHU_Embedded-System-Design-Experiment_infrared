@@ -4,9 +4,7 @@ import android.app.*;
 import android.content.*;
 import android.hardware.*;
 import android.os.*;
-import android.util.*;
 import android.view.*;
-import android.widget.*;
 
 import java.util.*;
 

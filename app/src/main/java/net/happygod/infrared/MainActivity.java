@@ -1,10 +1,8 @@
 package net.happygod.infrared;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.hardware.ConsumerIrManager;
 import android.view.View;
 import android.widget.*;
